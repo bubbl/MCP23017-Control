@@ -24,26 +24,36 @@ bus.write_byte_data(0x20,0x01,0x00) # Set all of bank B to outputs
 # The HTML used to build the full web page option
 html = """
 <html>
-<body backgroud="blue">
-   <form method="get" action="mcp23017.wsgi" name="form">
+<body>
+   <form method="get" action="mcp23017.wsgi">
     <br />
       <p>
-         <input name="state" type="hidden" value="high">
          <b>
-         <input name="output" type="radio" value="0"> LAMPKA NOCNA&nbsp;&nbsp;&nbsp;|
-         <input name="output" type="radio" value="1"> YAMAHA&nbsp;&nbsp;&nbsp;|
-         <input name="output" type="radio" value="2"> NUMBER 3&nbsp;&nbsp;&nbsp;|
-         <input name="output" type="radio" value="3"> NUMBER 4&nbsp;&nbsp;&nbsp;|
-         <input name="output" type="radio" value="4"> NUMBER 5 
-         <br /><br /></b>
+         <input name="output" type="radio" value="0"> LAMPKA NOCNA<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="bank" type="radio" value="b"> <b>ON</b>
+         <input name="bank" type="radio" value="a"> <b>OFF</b> <br />
       </p>
       <p>
       <b>--------------------------------------</b>
       </p>
       <p>
-         <input name="bank" type="radio" value="b"> <b>ON</b>
+         <input name="output" type="radio" value="1"> YAMAHA<br />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="bank" type="radio" value="b"> <b>ON</b>
          <input name="bank" type="radio" value="a"> <b>OFF</b> <br />
       </p>
+      <p>
+      <b>--------------------------------------</b>
+      </p>
+      <p>
+         <input name="output" type="radio" value="2"> NUMBER 3&nbsp;&nbsp;&nbsp;|
+         <input name="output" type="radio" value="3"> NUMBER 4&nbsp;&nbsp;&nbsp;|
+         <input name="output" type="radio" value="4"> NUMBER 5
+         <br /><br /></b>
+      </p>
+      <p>
+         <input name="bank" type="radio" value="b"> <b>ON</b>
+         <input name="bank" type="radio" value="a"> <b>OFF</b> <br />
+      </p><br /><br />
       <p>
          <input type="submit" value="ZMIEN"><br />
       </p>
@@ -74,7 +84,8 @@ def application(environ, start_response):
    d = parse_qs(environ['QUERY_STRING'])
    bank = d.get('bank', [''])[0] 
    output = d.get('output', ['8'])[0] 
-   state = d.get('state', [''])[0] 
+#   state = d.get('state', ['high'])[0]
+   state = "high"
    mode = d.get('mode', [''])[0]
 
    # Escape user input
