@@ -38,3 +38,11 @@ http://rpi/mcp23017.wsgi?bank=a&output=1&state=high&mode=json
 Response: {"GPA1":"HIGH"}
 
 Requires python-smbus and apache with mod-wsgi. Note that you will need to make sure your web server has permissions for the i2c bus, eg. /dev/i2c-1
+
+---------------------------------
+
+![mcp](https://raw.github.com/bubbl/MCP23017-Control/master/img/mcpbreadboard.png)
+
+![mcp](https://raw.github.com/bubbl/MCP23017-Control/master/img/remote2.png)
+
+![mcp](https://raw.github.com/bubbl/MCP23017-Control/master/img/sliceofmcp23017.png)
