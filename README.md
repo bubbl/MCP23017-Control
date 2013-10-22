@@ -3,6 +3,8 @@ MCP23017-Control
 
 Simple Python Tool for the MCP23017 I2C IO Expander.
 
+For the project description, go to: http://www.bartbania.com/index.php/remote-home/
+
 -------------------
 
 Based on Nathan Chantrell's https://github.com/nathanchantrell/Python-MCP230XX
