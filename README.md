@@ -12,6 +12,8 @@ Changed wsgi menu and added "push" button emulation for Remote Control Switch.
 menu.py
 -------
 
+![menu.py](https://raw.github.com/bubbl/MCP23017-Control/master/img/mcp_menu.png)
+
 Simple command line Python curses menu to control remote switches with keyboard. To run:
 
 <code>> python menu.py</code>
