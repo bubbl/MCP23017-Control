@@ -18,9 +18,9 @@ Simple command line Python curses menu to control remote switches with keyboard.
 
 <code>> python menu.py</code>
 
-Remember to sudo chmod +x mcp23017.py before running.
+Remember to **sudo chmod +x mcp23017.py** before running.
 
-Keys **1-0** trigger MCP's ports to switch remote buttons. **Q** exits menu to console.
+Keys **1-0** trigger MCP's ports to switch remote buttons. **Q** (without [Shift]) exits the menu.
 
 menu.py
 -------
