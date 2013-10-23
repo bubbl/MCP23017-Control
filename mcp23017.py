@@ -3,6 +3,9 @@
 # A simple Python command line tool to control an MCP23017 I2C IO Expander
 # By Nathan Chantrell http://nathan.chantrell.net
 # GNU GPL V3 
+#
+# Small alterations by:
+# Bart Bania http://www.bartbania.com/
 
 import smbus
 import sys
